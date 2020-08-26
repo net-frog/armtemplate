@@ -8,10 +8,10 @@
     "utcValue": {
       "type": "string",
       "defaultValue": "[utcNow()]"
-    }
+    },
    variables": {
         "identityName": "scratch"
-    },
+    }
   },
   "resources": [
     {
