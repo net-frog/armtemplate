@@ -9,6 +9,9 @@
       "type": "string",
       "defaultValue": "[utcNow()]"
     }
+   variables": {
+        "identityName": "scratch"
+    },
   },
   "resources": [
     {
@@ -20,7 +23,8 @@
       "identity": {
         "type": "UserAssigned",
         "userAssignedIdentities": {
-          "[parameters('identity')]": {
+				"[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', variables('identityName'))]": { /*ttk bug*/
+                    }
           }
         }
       },
