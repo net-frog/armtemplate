@@ -10,7 +10,7 @@
             },
     "identity": {
       "type": "string",
-      "defaultValue": "arpatech-[utcNow()]"
+      "defaultValue": "arpatech[utcNow()]"
     },
     "utcValue": {
       "type": "string",
