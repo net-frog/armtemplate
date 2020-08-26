@@ -11,6 +11,10 @@
     "identity": {
       "type": "string",
       "defaultValue": "sp-deploy"
+      "metadata": {
+                   "description": "The name of user-assigned managed identity"}
+               },
+	
     },
     "utcValue": {
       "type": "string",
