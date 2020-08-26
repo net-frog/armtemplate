@@ -49,7 +49,10 @@
       "name": "runBashWithOutputs",
       "location": "[resourceGroup().location]",
       "kind": "AzureCLI",
-      "identity": {
+      "dependsOn": [
+                  "[variables('identityName')]"
+              ], 
+     "identity": {
         "type": "UserAssigned",
         "userAssignedIdentities": {
 				"[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', variables('identityName'))]": { /*ttk bug*/}
