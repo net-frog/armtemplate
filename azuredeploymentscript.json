@@ -10,7 +10,7 @@
             },
     "identity": {
       "type": "string",
-      "defaultValue": "arpatech[utcNow()]"
+      "defaultValue": "sp-deploy"
     },
     "utcValue": {
       "type": "string",
