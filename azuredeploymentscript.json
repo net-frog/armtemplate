@@ -9,7 +9,8 @@
                 "description": "The location for the script resource."}
             },
     "identity": {
-      "type": "string"
+      "type": "string",
+      "defaultValue": "arpatech-[utcNow()]"
     },
     "utcValue": {
       "type": "string",
