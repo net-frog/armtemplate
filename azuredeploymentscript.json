@@ -16,8 +16,13 @@
       "defaultValue": "[utcNow()]"
     }
 },
-   "variables": {
-        "identityName": "spider"
+   "variables": { 
+     "identityName": "spider",
+    "roleDefinitionId": "[resourceId('Microsoft.Authorization/roleDefinitions', 'b24988ac-6180-42a0-ab88-20f7382dd24c')]"
+        
+        
+        
+
     },
   
   "resources": [
@@ -26,6 +31,20 @@
             "name": "[variables('identityName')]",
             "apiVersion": "2018-11-30",
             "location": "[parameters('location')]"
+        },
+	{
+            "type": "Microsoft.Authorization/roleAssignments",
+            "apiVersion": "2019-04-01-preview",
+            "name": "[variables('roleDefinitionName')]",
+            "dependsOn": [
+                "[variables('identityName')]"
+            ],
+            "properties": {
+                "roleDefinitionId": "[variables('roleDefinitionId')]",
+                "principalId": "[reference(variables('identityName')).principalId]",
+                "scope": "[resourceGroup().id]",
+                "principalType": "ServicePrincipal"
+            }
         },
     {
       "type": "Microsoft.Resources/deploymentScripts",
